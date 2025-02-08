@@ -1,0 +1,136 @@
+.carousel-container {
+  position: relative;
+  top: 90px;
+  width: 100%;
+  height: clamp(250px, 75vh, 650px);
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  width: clamp(220px, 90vw, 1000px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.swiper-slide {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: scale(0.8);
+  opacity: 0.7;
+  max-width: clamp(250px, 50vw, 400px);
+  min-width: 220px;
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  max-width: clamp(280px, 55vw, 550px);
+  opacity: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+  border-radius: 50%;
+  z-index: 10;
+  color: white;
+  font-size: 18px;
+}
+
+.carousel-button.prev {
+  left: 20px;
+}
+
+.carousel-button.next {
+  right: 20px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-container:hover .carousel-button {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 280px;
+  }
+
+  .carousel-image {
+    width: 95%;
+  }
+
+  .swiper-slide {
+    max-width: 80%;
+    min-width: 200px;
+  }
+
+  .swiper-slide-active {
+    max-width: 90%;
+  }
+
+  .carousel-button {
+    padding: 8px;
+    font-size: 16px;
+    top: 50%;
+  }
+
+  .carousel-button.prev {
+    left: 10px;
+  }
+
+  .carousel-button.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 240px;
+  }
+
+  .carousel-image {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    max-width: 95%;
+  }
+
+  .swiper-slide-active {
+    max-width: 100%;
+  }
+
+  .carousel-button {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .carousel-button.prev {
+    left: 5px;
+  }
+
+  .carousel-button.next {
+    right: 5px;
+  }
+}
